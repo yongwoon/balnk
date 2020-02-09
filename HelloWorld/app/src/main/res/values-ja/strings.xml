@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">アプリにようこそ</string>
+    <string name="good_morning_text">おはようございます！</string>
+    <string name="good_afternoon_text">こんにちは !</string>
+    <string name="good_evening_text">こんばんは !</string>
+
+    <string name="morning_text">朝</string>
+    <string name="afternoon_text">昼</string>
+    <string name="evening_text">晩</string>
+</resources>
