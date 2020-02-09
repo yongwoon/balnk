@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HelloWorld</string>
+    <string name="good_morning_text">Good morning !</string>
+    <string name="good_afternoon_text">Good afternoon !</string>
+    <string name="good_evening_text">Good evening !</string>
+
+    <string name="morning_text">Morning</string>
+    <string name="afternoon_text">Afternoon</string>
+    <string name="evening_text">Evening</string>
+</resources>
