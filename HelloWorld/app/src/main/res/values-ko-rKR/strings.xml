@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">환영합니다.</string>
+    <string name="good_morning_text">안녕하세요！</string>
+    <string name="good_afternoon_text">안녕하세요 !</string>
+    <string name="good_evening_text">안녕하세요 !</string>
+
+    <string name="morning_text">아침</string>
+    <string name="afternoon_text">점심</string>
+    <string name="evening_text">저녁</string>
+</resources>
