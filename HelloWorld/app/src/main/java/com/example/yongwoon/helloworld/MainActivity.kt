@@ -22,11 +22,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         afternoonBtn.setOnClickListener {
-            greetingText.text = getString(R.string.afternoon_text)
+            greetingText.text = getString(R.string.good_afternoon_text)
         }
 
         eveningBtn.setOnClickListener {
-            greetingText.text = getString(R.string.evening_text)
+            greetingText.text = getString(R.string.good_evening_text)
         }
     }
 }
