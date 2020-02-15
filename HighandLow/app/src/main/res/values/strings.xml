@@ -5,4 +5,6 @@
     <string name="high_text">High</string>
     <string name="next_text">次へ</string>
     <string name="low_text">Low</string>
+    <string name="mycard_description">mycard description</string>
+    <string name="droid_description">droid description</string>
 </resources>
