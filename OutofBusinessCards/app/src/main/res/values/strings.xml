@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Out of Business Cards</string>
+    <string name="company_hint">会社名</string>
+    <string name="postal_hint">郵便番号</string>
+    <string name="address_hint">住所</string>
+    <string name="tel_hint">TEL</string>
+    <string name="fax_hint">FAX</string>
+    <string name="email_hint" >E-mail</string>
+    <string name="url_hint">URL</string>
+    <string name="position_hint"><![CDATA[部署&役職]]></string>
+    <string name="name_hint">名前</string>
 </resources>
