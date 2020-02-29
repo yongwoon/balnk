@@ -1,4 +1,29 @@
 <resources>
     <string name="app_name">Our Menu</string>
-    <string name="home_text" translatable="false">ホーム</string>
+    <string name="home_text">ホーム</string>
+    <string name="curry_text">カレー</string>
+    <string name="greencurry_text">グリーンカレー</string>
+    <string name="beefcurry_text">牛すじカレー</string>
+    <string name="tamoricurry_text">タモリカレー</string>
+    <string name="katsucurry_text">カツカレー</string>
+    <string name="noodle_text">麺類</string>
+    <string name="soba1_text">ぶっかけそば</string>
+    <string name="soba2_text">おろしそば</string>
+    <string name="ramen1_text">醤油ラーメン</string>
+    <string name="ramen2_text">酸辣湯麺</string>
+    <string name="nabeyaki_text">鍋焼きうどん</string>
+    <string name="udon_text">梅うどん</string>
+    <string name="hiyashi_text">冷やし中華</string>
+    <string name="stew_text">鍋もの</string>
+    <string name="oden_text">おでん</string>
+    <string name="osyarenabe_text">すこしおしゃれな鍋</string>
+    <string name="etc_text">その他</string>
+    <string name="beefbowl_text">牛丼</string>
+    <string name="peperoncino_text">ペペロンチーノ</string>
+    <string name="hiroshima_text">広島焼き</string>
+    <string name="hayashi_text">ハヤシライス</string>
+    <string name="ankake_text">あんかけ焼きそば</string>
+    <string name="baigai_text">バイ貝煮付け</string>
+    <string name="mail_text">メールする</string>
+    <string name="sms_text">SMSする</string>
 </resources>
