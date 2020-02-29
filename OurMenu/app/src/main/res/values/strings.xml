@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Our Menu</string>
+    <string name="home_text" translatable="false">ホーム</string>
 </resources>
