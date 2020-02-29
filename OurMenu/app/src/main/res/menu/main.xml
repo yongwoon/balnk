@@ -7,4 +7,16 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/home_text"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/curry"
+        android:title="@string/curry_text" />
+    <item
+        android:id="@+id/noodle"
+        android:title="@string/noodle_text" />
+    <item
+        android:id="@+id/stew"
+        android:title="@string/stew_text" />
+    <item
+        android:id="@+id/etc"
+        android:title="@string/etc_text" />
 </menu>
