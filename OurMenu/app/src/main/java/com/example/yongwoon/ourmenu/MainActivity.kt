@@ -1,5 +1,7 @@
 package com.example.yongwoon.ourmenu
 
+import android.content.Intent
+import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextMenu
@@ -158,5 +160,38 @@ class MainActivity : AppCompatActivity() {
         if(menuText.text.isNotEmpty()){
             menuInflater.inflate(R.menu.context, menu)
         }
+    }
+
+    override fun onContextItemSelected(item: MenuItem?): Boolean {
+        when(item?.itemId) {
+            R.id.mail -> {
+                val subject = getString(R.string.app_name)
+                val text = "${menuText.text}が食べたい!"
+                val uri = Uri.fromParts("mailto", "yonyon.japan@gmail.com", null)
+                val intent = Intent(Intent.ACTION_SENDTO, uri)
+
+                intent.putExtra(Intent.EXTRA_SUBJECT, subject)
+                intent.putExtra(Intent.EXTRA_TEXT, text)
+
+                if (intent.resolveActivity(packageManager) != null) {
+                    startActivity(intent)
+                }
+                return true
+            }
+
+            R.id.sms -> {
+                val text = "${menuText.text}が食べたい"
+                val uri = Uri.fromParts("smsto", "999999999", null)
+                val intent = Intent(Intent.ACTION_SENDTO, uri)
+                intent.putExtra("sms_body", text)
+
+                if (intent.resolveActivity(packageManager) != null) {
+                    startActivity(intent)
+                }
+
+                return true
+            }
+        }
+        return super.onContextItemSelected(item)
     }
 }
