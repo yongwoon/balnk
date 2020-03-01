@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/home_text"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/curry"
+        android:title="@string/curry_text" >
+        <menu >
+            <item
+                android:id="@+id/greencurry"
+                android:title="@string/greencurry_text" />
+            <item
+                android:id="@+id/beefcurry"
+                android:title="@string/beefcurry_text" />
+            <item
+                android:id="@+id/tamoricurry"
+                android:title="@string/tamoricurry_text" />
+            <item
+                android:id="@+id/katsucurry"
+                android:title="@string/katsucurry_text" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/noodle"
+        android:title="@string/noodle_text" >
+        <menu >
+            <item
+                android:id="@+id/soba1"
+                android:title="@string/soba1_text" />
+            <item
+                android:id="@+id/soba2"
+                android:title="@string/soba2_text" />
+            <item
+                android:id="@+id/ramen1"
+                android:title="@string/ramen1_text" />
+            <item
+                android:id="@+id/ramen2"
+                android:title="@string/ramen2_text" />
+            <item
+                android:id="@+id/nabeyaki"
+                android:title="@string/nabeyaki_text" />
+            <item
+                android:id="@+id/udon"
+                android:title="@string/udon_text" />
+            <item
+                android:id="@+id/hiyashi"
+                android:title="@string/hiyashi_text" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/stew"
+        android:title="@string/stew_text" >
+        <menu >
+            <item
+                android:id="@+id/oden"
+                android:title="@string/oden_text" />
+            <item
+                android:id="@+id/osyarenabe"
+                android:title="@string/osyarenabe_text" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/etc"
+        android:title="@string/etc_text" >
+        <menu >
+            <item
+                android:id="@+id/beefbowl"
+                android:title="@string/beefbowl_text" />
+            <item
+                android:id="@+id/peperoncino"
+                android:title="@string/peperoncino_text" />
+            <item
+                android:id="@+id/hiroshima"
+                android:title="@string/hiroshima_text" />
+            <item
+                android:id="@+id/hayashi"
+                android:title="@string/hayashi_text" />
+            <item
+                android:id="@+id/ankake"
+                android:title="@string/ankake_text" />
+            <item
+                android:id="@+id/baigai"
+                android:title="@string/baigai_text" />
+        </menu>
+    </item>
+</menu>
