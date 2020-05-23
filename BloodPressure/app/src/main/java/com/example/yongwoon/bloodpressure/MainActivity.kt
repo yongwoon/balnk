@@ -2,16 +2,22 @@ package com.example.yongwoon.bloodpressure
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import io.realm.Realm
+import io.realm.Sort
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var realm: Realm
+    private lateinit var adapter: CustomRecyclerViewAdapter
+    private lateinit var layoutManager: RecyclerView.LayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +29,19 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, EditActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val realmResults = realm.where(BloodPress::class.java)
+            .findAll()
+            .sort("id", Sort.DESCENDING)
+        Log.d("realmResults", realmResults.toString())
+        layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = layoutManager
+
+        adapter = CustomRecyclerViewAdapter(realmResults)
+        recyclerView.adapter = this.adapter
     }
 
     override fun onDestroy() {
