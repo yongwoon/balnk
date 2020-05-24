@@ -1,5 +1,6 @@
 package com.example.yongwoon.bloodpressure
 
+import android.content.Intent
 import android.graphics.Color
 import android.text.format.DateFormat
 import android.view.LayoutInflater
@@ -28,5 +29,11 @@ class CustomRecyclerViewAdapter(realmResults: RealmResults<BloodPress>): Recycle
         holder.minMaxText?.text = "${bloodPress?.max.toString()}/${bloodPress?.min.toString()}"
         holder.pulseText?.text = bloodPress?.pulse.toString()
         holder.itemView.setBackgroundColor(if (position %2 == 0) Color.LTGRAY else Color.WHITE)
+        holder.itemView.setOnClickListener{
+            val intent = Intent(it.context, EditActivity::class.java)
+            intent.putExtra("id", bloodPress?.id)
+            it.context.startActivity(intent)
+        }
+
     }
 }
