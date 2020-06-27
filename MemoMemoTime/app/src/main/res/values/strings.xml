@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Memo Memo Time</string>
     <string name="btn_text">ここで人一句</string>
+    <string name="memo_text">一言メモ</string>
+    <string name="save_text">保存</string>
+    <string name="cancel_text">キャンセル</string>
 </resources>

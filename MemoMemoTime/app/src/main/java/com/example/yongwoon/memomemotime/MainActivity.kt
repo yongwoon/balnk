@@ -1,10 +1,12 @@
 package com.example.yongwoon.memomemotime
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.format.DateFormat
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -13,7 +15,10 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
+import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -24,7 +29,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     // 位置情報を受け取るための Location object
     private lateinit var lastLocation: Location
     private var locationCallback: LocationCallback? = null
-
+    private lateinit var realm: Realm
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +40,25 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
+
+        realm = Realm.getDefaultInstance()
+        memoBtn.setOnClickListener{
+            val intent = Intent(this, AddActivity::class.java)
+            intent.putExtra("lat", lastLocation.latitude)
+            intent.putExtra("lng", lastLocation.longitude)
+            startActivity(intent)
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if(::mMap.isInitialized) {
+            putsMarkers()
+        }
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        realm.close()
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -108,6 +132,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             }
 
             fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, null)
+            putsMarkers()
         }
     }
 
@@ -122,5 +147,24 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         if(locationCallback != null) {
             fusedLocationProviderClient.removeLocationUpdates(locationCallback)
         }
+    }
+
+    private fun putsMarkers() {
+        mMap.clear()
+        val realmResults = realm.where(Memo::class.java).findAll()
+
+        for(memo: Memo in realmResults) {
+            val latLng = LatLng(memo.lat, memo.lng)
+            val marker = MarkerOptions()
+                .position(latLng) // 芭蕉
+                    .title(DateFormat.format("yyyy/MM/dd kk:mm", memo.dateTime).toString())
+                    .snippet(memo.memo)
+                    .draggable(false) // marker は drag 不可
+            val descriptor = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)
+
+            marker.icon(descriptor)
+            mMap.addMarker(marker)
+        }
+
     }
 }
