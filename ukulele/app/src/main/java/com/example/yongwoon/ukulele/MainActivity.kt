@@ -2,6 +2,7 @@ package com.example.yongwoon.ukulele
 
 import android.graphics.Color
 import android.graphics.Paint
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.SurfaceHolder
@@ -11,11 +12,40 @@ class MainActivity : AppCompatActivity(), SurfaceHolder.Callback {
     private var frets : Array<Float> = arrayOf(0f, 0f, 0f, 0f)
     private var strings : Array<Float> = arrayOf(0f, 0f, 0f, 0f)
 
+    // 13 sound
+    private var c5: MediaPlayer = MediaPlayer()
+    private var cs5: MediaPlayer = MediaPlayer()
+    private var d5: MediaPlayer = MediaPlayer()
+    private var ds5: MediaPlayer = MediaPlayer()
+    private var e5: MediaPlayer = MediaPlayer()
+    private var f5: MediaPlayer = MediaPlayer()
+    private var fs5: MediaPlayer = MediaPlayer()
+    private var g5: MediaPlayer = MediaPlayer()
+    private var gs5: MediaPlayer = MediaPlayer()
+    private var a5: MediaPlayer = MediaPlayer()
+    private var as5: MediaPlayer = MediaPlayer()
+    private var b5: MediaPlayer = MediaPlayer()
+    private var c6: MediaPlayer = MediaPlayer()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val holder = surfaceView.holder
         holder.addCallback(this)
+
+        c5 = MediaPlayer.create(this, R.raw.c5)
+        cs5 = MediaPlayer.create(this, R.raw.cs5)
+        d5 = MediaPlayer.create(this, R.raw.d5)
+        ds5 = MediaPlayer.create(this, R.raw.ds5)
+        e5 = MediaPlayer.create(this, R.raw.e5)
+        f5 = MediaPlayer.create(this, R.raw.f5)
+        fs5 = MediaPlayer.create(this, R.raw.fs5)
+        g5 = MediaPlayer.create(this, R.raw.g5)
+        gs5 = MediaPlayer.create(this, R.raw.gs5)
+        a5 = MediaPlayer.create(this, R.raw.a5)
+        as5 = MediaPlayer.create(this, R.raw.as5)
+        b5 = MediaPlayer.create(this, R.raw.b5)
+        c6 = MediaPlayer.create(this, R.raw.c6)
     }
 
     override fun surfaceChanged(holder: SurfaceHolder?, format: Int, width: Int, height: Int) {
