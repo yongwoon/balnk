@@ -90,11 +90,11 @@ class MainActivity : AppCompatActivity(), SurfaceHolder.Callback {
     }
 
     override fun surfaceDestroyed(p0: SurfaceHolder?) {
-        TODO("Not yet implemented")
+//        TODO("Not yet implemented")
     }
 
     override fun surfaceCreated(p0: SurfaceHolder?) {
-        TODO("Not yet implemented")
+//        TODO("Not yet implemented")
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
